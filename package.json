@@ -3,16 +3,10 @@
   "version": "1.0.0",
   "description": "Website comunidad praxispoetica",
   "author": "Victor Kane <victorkane@gmail.com>",
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "4041"
-    }
-  },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "HOST=0.0.0.0 PORT=4043 nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "HOST=0.0.0.0 PORT=4041 nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
