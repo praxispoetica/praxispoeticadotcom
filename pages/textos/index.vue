@@ -1,19 +1,19 @@
 <template>
  <v-container>
   <v-layout row wrap>
-    <v-flex xs12 sm3 v-for="texto in textos" :key="texto.slug">
+    <v-flex xs12 sm3 v-for="text in texts" :key="text.metaData.itemSlug">
       <v-card class="ma-1">
-        <v-card-title class="headline texto-card">
-          <nuxt-link :to="{ name: 'textos-id', params: { id: texto.slug } }">
-            {{ texto.titulo }}
+        <v-card-title class="headline text-card">
+          <nuxt-link :to="'/textos/'+text.metaData.itemSlug">
+            {{ text.metaData.itemName }}
           </nuxt-link>
         </v-card-title>
         <v-card-text>
-          <p>{{ texto.texto.replace(/<(?:.|\n)*?>/gm, '').substr(0,30) + '...' }}</p>
+          <p>{{ text.textBody.value.replace(/<(?:.|\n)*?>/gm, '').substr(0,30) + '...' }}</p>
         </v-card-text>
         <v-card-actions>
-          <p>{{ texto.autor }}</p>
-          <p class="right">{{ texto.fecha }}</p>
+          <p>{{ text.metaData.itemSlug }}</p>
+          <p class="right">{{ text.metaData.publishedDate }}</p>
         </v-card-actions>
       </v-card>
     </v-flex> 
@@ -25,17 +25,17 @@
   import { mapState } from 'vuex'
   export default {
     computed: mapState([
-      'textos'
+      'texts'
     ])
   }
 </script>
 
 <style>
-.texto-card a {
+.text-card a {
   text-decoration: none !important;
   padding: 2px !important;
 }
-.texto-card a:hover {
+.text-card a:hover {
   color: #fff8e1 !important;
   background-color: #c47754 !important;
 }
