@@ -12,7 +12,7 @@
           <p>{{ text.textBody.value.replace(/<(?:.|\n)*?>/gm, '').substr(0,30) + '...' }}</p>
         </v-card-text>
         <v-card-actions>
-          <p>{{ text.metaData.itemSlug }}</p>
+          <p> {{ text.textAuthor[0].metaData.itemName }} </p>
           <p class="right">{{ text.metaData.publishedDate }}</p>
         </v-card-actions>
       </v-card>
