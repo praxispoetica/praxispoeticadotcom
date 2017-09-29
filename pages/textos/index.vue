@@ -13,7 +13,7 @@
         </v-card-text>
         <v-card-actions>
           <p> {{ text.textAuthor[0].metaData.itemName }} </p>
-          <p class="right">{{ text.metaData.publishedDate }}</p>
+          <p class="right">{{ text.metaData.publishedDate | dateEsLa }}</p>
         </v-card-actions>
       </v-card>
     </v-flex> 

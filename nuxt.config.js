@@ -16,7 +16,7 @@ module.exports = {
       { rel: 'stylesheet', href: '/css/font-awesome.min.css' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js'],
+  plugins: ['~/plugins/vuetify.js', '~/plugins/datei18n.js'],
   css: [
     '~/assets/style/app.styl'
   ],
