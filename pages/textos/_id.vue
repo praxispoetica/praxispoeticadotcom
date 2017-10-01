@@ -6,7 +6,7 @@
           <v-card-title class="headline mb-1">{{ text.metaData.itemSlug }}</v-card-title>
           <v-card-text>
             <p class="primary--text subheading mt-0">{{ text.textAuthor[0].metaData.itemName }}</p>
-            <blockquote class="body-1" v-html="text.textBody.value"></blockquote>
+            <blockquote class="body-1" v-html="marked(text.textBody.value)"></blockquote>
             <p class="primary--text mt-2">{{ text.metaData.publishedDate | dateEsLa }}</p>
           </v-card-text>
           <v-card-actions><p><nuxt-link to="/textos">Volver a la lista de texts</nuxt-link></p></v-card-actions>
@@ -17,7 +17,9 @@
 </template>
 
 <script>
+  var marked = require('marked');
   export default {
+    marked,
     data () {
       return {
         text: this.$store.state.texts.find(x => x.metaData.itemSlug === this.$route.params.id)
