@@ -43,5 +43,8 @@ module.exports = {
         })
       }
     }
+  },
+  env: {
+    ppcdn: 'http://res.cloudinary.com/awebfactory/image/upload/v1506392555/'
   }
 }
