@@ -4,9 +4,9 @@
   "description": "Website comunidad praxispoetica",
   "author": "Victor Kane <victorkane@gmail.com>",
   "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=4043 nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "HOST=0.0.0.0 PORT=4041 nuxt start",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
