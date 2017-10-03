@@ -16,7 +16,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({commit}) {
-    let texts = await axios.get('http://awebfactory.org:4042/api/texts')
+    let texts = await axios.get(process.env.scsurl + '/api/texts')
     commit('setTexts', texts.data)
   }
 }
