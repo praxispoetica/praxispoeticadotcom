@@ -9,7 +9,7 @@
           </nuxt-link>
         </v-card-title>
         <v-card-text>
-          <p>{{ text.textBody.value.replace(/<(?:.|\n)*?>/gm, '').substr(0,30) + '...' }}</p>
+          <p>{{ text.textBody.value.replace(/\*|^>|<(?:.|\n)*?>/gm, '').substr(0,30) + '...' }}</p>
         </v-card-text>
         <v-card-actions>
           <p> {{ text.textAuthor[0].metaData.itemName }} </p>
@@ -22,11 +22,13 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   export default {
-    computed: mapState([
-      'texts'
-    ])
+    data () {
+      let theTexts = this.$store.state.texts
+      return {
+        texts: theTexts
+      }
+    }
   }
 </script>
 
