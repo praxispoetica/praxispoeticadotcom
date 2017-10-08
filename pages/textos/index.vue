@@ -1,7 +1,7 @@
 <template>
  <v-container>
   <v-layout row wrap>
-    <v-flex xs12 sm3 v-for="text in texts" :key="text.metaData.itemSlug">
+    <v-flex xs12 sm6 md3 v-for="text in texts" :key="text.metaData.itemSlug">
       <v-card class="ma-1">
         <v-card-title class="headline text-card">
           <nuxt-link :to="'/textos/'+text.metaData.itemSlug">
