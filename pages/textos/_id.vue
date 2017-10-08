@@ -3,13 +3,15 @@
     <v-layout row wrap>
       <v-flex xs12>
         <v-card class="ma-1">
-          <v-card-title class="headline mb-1">{{ text.metaData.itemName }}</v-card-title>
-            <p class="primary--text author-title subheading mt-0">
+          <v-card-title primary-title> 
+            <div>
+              <h3 class="text-title">{{ text.metaData.itemName }}</h3>
               <v-avatar size="36px" class="left dark">
                 <img :src=theAvatar>
-                {{ text.textAuthor[0].metaData.itemName }}
+                <h6 class="text-author">&nbsp;{{ text.textAuthor[0].metaData.itemName }}</h6>
               </v-avatar>
-            </p>
+            </div>
+          </v-card-title>
           <v-card-text>
             <blockquote class="body-1" v-html="theTextBody"></blockquote>
             <p class="primary--text mt-2">{{ text.metaData.publishedDate | dateEsLa }}</p>
@@ -39,11 +41,7 @@
 </script>
 
 <css>
-.author-title {
-  margin-bottom: 3em;
-}
-.author-title img {
-  margin-left: 1em;
-  margin-right: 0.5em;
+.text-title {
+  color: #9a4c29;
 }
 </css>
